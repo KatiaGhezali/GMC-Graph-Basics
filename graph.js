@@ -114,3 +114,32 @@ class Graph {
     return result;
   }
 }
+
+// Tests
+
+// Create an undirected graph
+
+const graph = new Graph(false);
+
+//Add edges
+graph.addEdge("A", "B");
+graph.addEdge("A", "C");
+graph.addEdge("B", "D");
+graph.addEdge("C", "E");
+
+console.log("--- Graph ---");
+graph.printGraph();
+
+console.log("\n--- Check Edges ---");
+console.log("A-B:", graph.hasEdge("A", "B"));
+console.log("B-E:", graph.hasEdge("B", "E"));
+
+console.log("\n--- Traversals ---");
+graph.DFS("A");
+graph.BFS("A");
+
+console.log("\n--- Remove Edge A-B ---");
+graph.removeEdge("A", "B");
+graph.printGraph();
+
+console.log("\nA-B:", graph.hasEdge("A", "B"));
