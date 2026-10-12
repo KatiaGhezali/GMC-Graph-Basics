@@ -143,3 +143,24 @@ graph.removeEdge("A", "B");
 graph.printGraph();
 
 console.log("\nA-B:", graph.hasEdge("A", "B"));
+
+// Create a directed graph
+
+console.log("\n--- Directed Graph ---");
+
+const directedGraph = new Graph(true);
+
+directedGraph.addEdge("A", "B");
+directedGraph.addEdge("A", "C");
+directedGraph.addEdge("B", "D");
+
+directedGraph.printGraph();
+
+directedGraph.DFS("A");
+directedGraph.BFS("A");
+
+console.log("A-B:", directedGraph.hasEdge("A", "B"));
+console.log("B-A:", directedGraph.hasEdge("B", "A"));
+
+directedGraph.removeEdge("A", "B");
+console.log("A-B after removal:", directedGraph.hasEdge("A", "B"));
